@@ -20,7 +20,7 @@ public class Range implements IntegerSequence{
     current = start;
   }
   public int length(){
-    return (this.end-this.start);
+    return (this.end-this.start+1);
   }
 
   //When current is no longer a valid element in the range, it should return false.
