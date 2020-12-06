@@ -23,7 +23,7 @@ public class Range implements IntegerSequence{
 
   //When current is no longer a valid element in the range, it should return false.
   public boolean hasNext(){
-    return (current + 1 >= end) || (current + 1 <= start);
+    return (current + 1 <= end) && (current + 1 >= start);
   }
 
   //@throws NoSuchElementException when hasNext() is false.
