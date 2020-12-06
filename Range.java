@@ -1,10 +1,3 @@
-public interface IntegerSequence{
-  boolean hasNext() ;//does the sequence have more elements?
-  int next();         //return the current value in the sequence and advances to the next element
-  int length();     //returns the total length of the sequence
-  void reset();     //start over from the start of the sequence
-}
-
 import java.util.NoSuchElementException;
 public class Range implements IntegerSequence{
   private int start,end,current;
@@ -25,6 +18,7 @@ public class Range implements IntegerSequence{
 
   //When current is no longer a valid element in the range, it should return false.
   public boolean hasNext(){
+    reset
     return (current + 1 <= end) && (current + 1 >= start);
   }
 
@@ -32,6 +26,9 @@ public class Range implements IntegerSequence{
   //This will return the current value, it will also increase current value by 1.
   //e.g.  if current is 5. This will make current 6, and return 5.
   public int next(){
+    if (!hasNext()){
+      throw new NoSuchElementException();
+    }
     current++;
     return current - 1;
   }
