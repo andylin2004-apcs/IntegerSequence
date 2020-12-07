@@ -9,10 +9,11 @@ public class ArraySequence implements IntegerSequence{
     for (int i = 0; i<other.length; i++){
       this.data[i] = other[i];
     }
+    currentIndex = 0;
   }
 
   public void reset(){
-
+    currentIndex = 0;
   }
 
   public int length(){
@@ -20,9 +21,11 @@ public class ArraySequence implements IntegerSequence{
   }
 
   public int next(){
-    if (hasNext()){
-
+    if (!hasNext()){
+      throw new NoSuchElementException();
     }
+    currentIndex++;
+    return this.data[currentIndex-1];
   }
 
   public boolean hasNext(){
